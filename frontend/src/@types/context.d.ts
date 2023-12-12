@@ -1,12 +1,20 @@
 export interface Entry {
-  id?: string;
-  title: string;
-  description: string;
-  created_at: Date | string;
+  id?: string
+  title: string
+  description: string
+  created_at: Date | string
+  scheduled_at: Date | string
 }
 export type EntryContextType = {
-  entries: Entry[];
-  saveEntry: (entry: Entry) => void;
-  updateEntry: (id: string, entryData: Entry) => void;
-  deleteEntry: (id: string) => void;
-};
+  entries: Entry[]
+  saveEntry: (entry: Entry) => void
+  updateEntry: (id: string, entryData: Entry) => void
+  deleteEntry: (id: string) => void
+}
+
+export interface ThemeContextType {
+  darkMode: boolean
+  toggleDarkMode: () => void
+}
+
+export const useThemeContext: () => ThemeContextType
